@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivere Sostenibile · 10 incontri · Libra Pietrasanta</title>
+<meta name="description" content="Un percorso di 10 incontri in presenza per esplorare a 360° l'impatto delle nostre azioni individuali e collettive. Da settembre 2026 · Libra, Pietrasanta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,700&family=Manrope:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+<script>var W3F_KEY = "918c6a5b-9a01-4fe4-a0e5-948f123f94e9";</script>
+<style>
+:root{
+  --sage:    #CCD8A8;
+  --sage-d:  #A0AE78;
+  --sage-dk: #5A7A40;
+  --mauve:   #8A5756;
+  --mauve-d: #5A3030;
+  --olive:   #787741;
+  --olive-l: #D5D8A8;
+  --cream:   #FAF8EF;
+  --paper:   #F4F0E0;
+  --ink:     #2A1818;
+  --ink-s:   #4A3428;
+  --line:    rgba(42,24,24,0.10);
+  --shadow:  0 8px 40px rgba(42,24,24,0.12);
+  --shadow-lg: 0 24px 80px rgba(42,24,24,0.20);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Manrope',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+::selection{background:var(--mauve);color:var(--cream);}
+
+/* ═══ STICKY NAV ═══ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:14px 0;transition:all .3s ease;background:rgba(250,248,239,0);backdrop-filter:blur(0);}
+.nav.scrolled{background:rgba(250,248,239,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:10px 0;}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.nav-brand{display:flex;align-items:center;gap:10px;font-family:'Fraunces',serif;font-size:18px;font-weight:500;color:var(--ink);}
+.nav-brand em{font-style:italic;color:var(--mauve);}
+.nav-back{font-size:13px;color:var(--ink-s);display:inline-flex;align-items:center;gap:6px;opacity:0.7;transition:opacity .2s;}
+.nav-back:hover{opacity:1;}
+.nav-cta{background:var(--mauve);color:var(--cream);padding:10px 22px;border-radius:30px;font-size:13px;font-weight:600;letter-spacing:0.03em;display:inline-flex;align-items:center;gap:7px;transition:all .2s ease;box-shadow:0 4px 16px rgba(138,87,86,0.30);}
+.nav-cta:hover{background:var(--mauve-d);transform:translateY(-1px);}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;display:flex;align-items:flex-end;padding:0;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('assets/vivere.jpg');background-size:cover;background-position:center top;transition:transform 8s ease;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(42,24,24,0.08) 0%,rgba(42,24,24,0.20) 40%,rgba(42,24,24,0.82) 100%);}
+.hero-content{position:relative;z-index:2;max-width:1100px;margin:0 auto;padding:180px 24px 80px;width:100%;}
+.hero-kicker{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:var(--olive-l);font-weight:600;margin-bottom:20px;}
+.hero-kicker::before{content:'';width:28px;height:1px;background:var(--olive-l);}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(3rem,8vw,7rem);font-weight:400;line-height:0.95;letter-spacing:-0.03em;color:var(--cream);margin-bottom:12px;}
+.hero h1 em{font-style:italic;color:var(--sage);}
+.hero-sub{font-size:clamp(1rem,2vw,1.25rem);color:rgba(250,248,239,0.80);max-width:600px;margin-bottom:36px;line-height:1.55;font-weight:300;}
+.hero-cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
+.btn-hero{background:var(--sage);color:var(--ink);padding:18px 38px;border-radius:50px;font-size:15px;font-weight:700;letter-spacing:0.03em;display:inline-flex;align-items:center;gap:10px;transition:all .25s cubic-bezier(.2,.7,.3,1);box-shadow:0 8px 30px rgba(204,216,168,0.40);}
+.btn-hero:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(204,216,168,0.55);background:#E0E8B8;}
+.btn-hero svg{width:17px;height:17px;}
+.hero-note{font-size:13px;color:rgba(250,248,239,0.65);display:flex;align-items:center;gap:6px;}
+.hero-note::before{content:'🎟️';}
+
+/* ═══ EARLY BIRD BANNER ═══ */
+.eb-banner{background:var(--olive);color:var(--cream);padding:18px 24px;text-align:center;position:relative;}
+.eb-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.eb-text{font-size:15px;font-weight:500;}
+.eb-text strong{font-weight:700;}
+.eb-countdown{display:inline-flex;gap:10px;align-items:center;}
+.eb-unit{display:flex;flex-direction:column;align-items:center;background:rgba(255,255,255,0.15);padding:6px 12px;border-radius:8px;min-width:52px;}
+.eb-num{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:500;line-height:1;}
+.eb-label{font-size:9px;letter-spacing:0.15em;text-transform:uppercase;opacity:0.8;}
+.eb-sep{font-size:1.3rem;opacity:0.6;font-weight:700;margin-top:-4px;}
+.eb-cta{background:var(--cream);color:var(--olive);padding:10px 22px;border-radius:30px;font-size:13px;font-weight:700;display:inline-flex;align-items:center;gap:7px;transition:all .2s ease;flex-shrink:0;}
+.eb-cta:hover{background:var(--sage);transform:translateY(-1px);}
+
+/* ═══ SECTIONS SHARED ═══ */
+.section{padding:96px 24px;}
+.section-inner{max-width:1100px;margin:0 auto;}
+.label-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mauve);font-weight:700;margin-bottom:14px;}
+.label-tag::before{content:'';width:22px;height:1px;background:var(--mauve);}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(2rem,4.5vw,3.4rem);font-weight:400;line-height:1.05;color:var(--ink);letter-spacing:-0.02em;margin-bottom:20px;}
+.section-title em{font-style:italic;color:var(--mauve);}
+.section-lead{font-size:1.1rem;color:var(--ink-s);line-height:1.65;max-width:660px;}
+.section-lead strong{color:var(--ink);font-weight:600;}
+
+/* ═══ HOOK SECTION ═══ */
+.hook-section{background:var(--paper);}
+.hook-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+@media(max-width:800px){.hook-grid{grid-template-columns:1fr;gap:36px;}}
+.hook-question{font-family:'Fraunces',serif;font-size:clamp(1.5rem,3vw,2.1rem);font-style:italic;font-weight:300;color:var(--ink);line-height:1.35;border-left:3px solid var(--mauve);padding-left:24px;}
+.hook-img{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+.hook-img img{width:100%;height:320px;object-fit:cover;}
+
+/* ═══ PILLARS ═══ */
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+@media(max-width:720px){.pillars-grid{grid-template-columns:1fr;}}
+.pillar{background:var(--cream);border-radius:18px;padding:32px;border:1px solid var(--line);transition:all .3s ease;position:relative;overflow:hidden;}
+.pillar::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:var(--mauve);}
+.pillar:nth-child(2)::before{background:var(--olive);}
+.pillar:nth-child(3)::before{background:var(--sage-dk);}
+.pillar:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.pillar-icon{font-size:2rem;margin-bottom:16px;}
+.pillar h3{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500;margin-bottom:10px;color:var(--ink);}
+.pillar p{font-size:14px;color:var(--ink-s);line-height:1.6;}
+
+/* ═══ PROGRAM ═══ */
+.program-section{background:var(--ink);color:var(--cream);}
+.program-section .section-title{color:var(--cream);}
+.program-section .section-title em{color:var(--sage);}
+.program-section .label-tag{color:var(--sage-d);}
+.program-section .label-tag::before{background:var(--sage-d);}
+.program-section .section-lead{color:rgba(250,248,239,0.70);}
+.program-table{margin-top:48px;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+@media(max-width:700px){.program-table{grid-template-columns:1fr;}}
+.program-item{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.10);border-radius:14px;padding:20px 24px;display:flex;gap:18px;align-items:flex-start;transition:all .3s ease;}
+.program-item:hover{background:rgba(255,255,255,0.09);border-color:rgba(204,216,168,0.30);transform:translateX(4px);}
+.program-num{font-family:'Fraunces',serif;font-size:2rem;font-weight:500;color:var(--sage-d);opacity:0.6;line-height:1;flex-shrink:0;min-width:36px;}
+.program-detail{}
+.program-date{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-d);font-weight:600;margin-bottom:4px;}
+.program-tema{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:500;color:var(--cream);line-height:1.2;}
+.program-info{margin-top:36px;display:flex;gap:24px;flex-wrap:wrap;}
+.program-badge{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);padding:12px 20px;border-radius:30px;font-size:13px;color:rgba(250,248,239,0.80);display:inline-flex;align-items:center;gap:8px;}
+
+/* ═══ FACILITATORI ═══ */
+.fac-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:48px;}
+@media(max-width:800px){.fac-grid{grid-template-columns:1fr;}}
+.fac-card{background:var(--paper);border-radius:20px;overflow:hidden;border:1px solid var(--line);transition:all .3s ease;}
+.fac-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
+.fac-header{background:linear-gradient(135deg,var(--mauve) 0%,var(--mauve-d) 100%);padding:36px 32px 28px;position:relative;}
+.fac-header:nth-child(1){background:linear-gradient(135deg,var(--olive) 0%,#4A4820 100%);}
+.fac-card:last-child .fac-header{background:linear-gradient(135deg,var(--olive) 0%,#4A4820 100%);}
+.fac-name{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:500;color:var(--cream);margin-bottom:4px;}
+.fac-role{font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(250,248,239,0.70);font-weight:500;}
+.fac-body{padding:28px 32px;}
+.fac-body p{font-size:14px;color:var(--ink-s);line-height:1.65;margin-bottom:14px;}
+.fac-body p:last-child{margin:0;}
+.fac-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--mauve);transition:color .2s;}
+.fac-link:hover{color:var(--mauve-d);}
+
+/* ═══ WHY + WHO ═══ */
+.why-section{background:var(--paper);}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px;}
+@media(max-width:800px){.why-grid{grid-template-columns:1fr;gap:32px;}}
+.why-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.why-list li{display:flex;gap:14px;font-size:15px;color:var(--ink-s);line-height:1.5;align-items:flex-start;}
+.why-list li::before{content:'✅';flex-shrink:0;margin-top:1px;}
+.who-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+.who-list li{display:flex;gap:12px;font-size:14px;color:var(--ink-s);line-height:1.5;align-items:flex-start;background:var(--cream);padding:14px 18px;border-radius:12px;border:1px solid var(--line);}
+.who-list li::before{content:'→';color:var(--mauve);font-weight:700;flex-shrink:0;}
+
+/* ═══ PRICING + FORM ═══ */
+.pricing-section{background:var(--sage);}
+.pricing-inner{max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start;}
+@media(max-width:900px){.pricing-inner{grid-template-columns:1fr;gap:36px;}}
+
+.price-card{background:var(--cream);border-radius:22px;padding:36px;box-shadow:var(--shadow-lg);}
+.price-card-label{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--mauve);font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.price-card-label::before{content:'';width:18px;height:1px;background:var(--mauve);}
+.price-card h2{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:500;color:var(--ink);margin-bottom:24px;line-height:1.2;}
+.price-main{display:flex;flex-direction:column;gap:12px;margin-bottom:28px;}
+.price-option{border-radius:14px;padding:20px 22px;border:2px solid transparent;transition:all .2s ease;cursor:default;}
+.price-option.featured{background:linear-gradient(135deg,var(--mauve) 0%,var(--mauve-d) 100%);color:var(--cream);box-shadow:0 8px 24px rgba(138,87,86,0.35);}
+.price-option.regular{background:var(--paper);border-color:var(--line);}
+.price-badge{font-size:10px;letter-spacing:0.15em;text-transform:uppercase;font-weight:700;opacity:0.85;margin-bottom:4px;}
+.price-amount{font-family:'Fraunces',serif;font-size:2.6rem;font-weight:500;line-height:1;letter-spacing:-0.02em;margin-bottom:3px;}
+.price-option.featured .price-amount{color:var(--cream);}
+.price-option.regular .price-amount{color:var(--ink);text-decoration:line-through;opacity:0.5;}
+.price-option.regular .price-badge,.price-option.regular .price-desc{opacity:0.6;}
+.price-desc{font-size:13px;opacity:0.85;}
+.price-deadline{background:var(--olive-l);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--ink);display:flex;gap:8px;align-items:center;margin-bottom:20px;}
+.price-includes{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.price-includes li{display:flex;gap:10px;font-size:13px;color:var(--ink-s);align-items:flex-start;}
+.price-includes li::before{content:'✓';color:var(--sage-dk);font-weight:700;flex-shrink:0;}
+
+/* FORM */
+.form-card{background:var(--cream);border-radius:22px;padding:36px;box-shadow:var(--shadow-lg);}
+.form-card h3{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:500;color:var(--ink);margin-bottom:6px;}
+.form-card .sub{font-size:14px;color:var(--ink-s);margin-bottom:24px;line-height:1.5;}
+.form-group{margin-bottom:16px;}
+.form-group label{display:block;font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink-s);margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 15px;border-radius:10px;border:1.5px solid rgba(42,24,24,0.15);background:#fff;color:var(--ink);font-size:14px;font-family:'Manrope',sans-serif;transition:border-color .2s;outline:none;-webkit-appearance:none;appearance:none;}
+.form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234A3428' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:16px;padding-right:38px;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--mauve);box-shadow:0 0 0 3px rgba(138,87,86,0.12);}
+.form-group textarea{resize:vertical;min-height:80px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:480px){.form-row{grid-template-columns:1fr;}}
+.form-submit{width:100%;padding:16px;border-radius:30px;background:var(--mauve);color:var(--cream);border:none;cursor:pointer;font-size:15px;font-weight:700;letter-spacing:0.03em;font-family:'Manrope',sans-serif;transition:all .25s ease;margin-top:8px;display:flex;align-items:center;justify-content:center;gap:10px;}
+.form-submit:hover{background:var(--mauve-d);transform:translateY(-1px);}
+.form-submit:disabled{opacity:0.55;cursor:not-allowed;transform:none;}
+.form-disclaimer{text-align:center;font-size:12px;color:var(--ink-s);margin-top:12px;line-height:1.5;}
+.form-success{display:none;flex-direction:column;align-items:center;text-align:center;padding:36px 20px;gap:12px;}
+.form-success .check{width:70px;height:70px;border-radius:50%;background:var(--sage);display:grid;place-items:center;font-size:30px;margin-bottom:8px;}
+.form-success h3{font-family:'Fraunces',serif;font-size:1.4rem;color:var(--ink);}
+.form-success p{color:var(--ink-s);font-size:14px;max-width:280px;line-height:1.6;}
+
+/* ═══ FOOTER ═══ */
+.footer{background:var(--ink);color:var(--cream);padding:48px 24px;text-align:center;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-brand{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:500;margin-bottom:8px;}
+.footer-brand em{font-style:italic;color:var(--sage-d);}
+.footer p{color:rgba(250,248,239,0.55);font-size:13px;margin-bottom:20px;}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}
+.footer-links a{color:rgba(250,248,239,0.55);font-size:13px;transition:color .2s;}
+.footer-links a:hover{color:var(--sage);}
+.footer-back{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:12px 24px;border:1px solid rgba(255,255,255,0.15);border-radius:30px;font-size:13px;color:rgba(250,248,239,0.7);transition:all .2s;}
+.footer-back:hover{border-color:var(--sage-d);color:var(--sage);}
+
+/* ═══ RESPONSIVE ═══ */
+@media(max-width:600px){
+  .nav-back{display:none;}
+  .hero h1{font-size:clamp(2.5rem,10vw,4rem);}
+  .eb-inner{flex-direction:column;gap:12px;}
+  .section{padding:64px 18px;}
+  .pricing-section{padding-top:64px;padding-bottom:64px;}
+  .pricing-inner{padding:0 18px;}
+}
+section[id]{scroll-margin-top:72px;}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1);}
+.reveal.in{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1!important;transform:none!important;transition:none!important;}}
+
+/* ═══ POSTER FADE ═══ */
+.poster-fade{
+  background:var(--cream);
+  padding:0;
+  position:relative;
+  overflow:hidden;
+}
+.poster-fade-inner{
+  max-width:540px;
+  margin:0 auto;
+  position:relative;
+}
+.poster-fade-inner::before{
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;
+  height:120px;
+  background:linear-gradient(180deg,var(--cream) 0%,transparent 100%);
+  z-index:2;
+}
+.poster-fade-inner::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:160px;
+  background:linear-gradient(0deg,var(--cream) 0%,transparent 100%);
+  z-index:2;
+}
+.poster-fade-inner img{
+  width:100%;
+  display:block;
+  opacity:0.85;
+  filter:saturate(0.9);
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <div style="display:flex;align-items:center;gap:24px;">
+      <span class="nav-brand">Libra<em> Terra Creativa</em></span>
+      <a href="index.html" class="nav-back">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Tutti gli eventi
+      </a>
+    </div>
+    <a href="#iscrizione" class="nav-cta">
+      Iscriviti
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-kicker">Libra · Pietrasanta · 10 incontri · dal 28 settembre 2026</div>
+    <h1>Vivere<br><em>Sostenibile</em></h1>
+    <p class="hero-sub">Dai consumi alla cittadinanza attiva. Un percorso pratico e partecipativo per trasformare la consapevolezza in scelte quotidiane reali.</p>
+    <div class="hero-cta-row">
+      <a href="#iscrizione" class="btn-hero">
+        Prenota il tuo posto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <span class="hero-note">Early bird €250 · offerta valida fino al 15 settembre</span>
+    </div>
+  </div>
+</section>
+
+<!-- POSTER SECTION — locandina sfumata -->
+<div class="poster-fade">
+  <div class="poster-fade-inner">
+    <img src="assets/vivere.jpg" alt="Vivere Sostenibile – locandina">
+  </div>
+</div>
+
+<!-- EARLY BIRD BANNER -->
+<div class="eb-banner" id="eb-banner">
+  <div class="eb-inner">
+    <div class="eb-text">🎟️ <strong>Offerta lancio €250</strong> — scade tra:</div>
+    <div class="eb-countdown">
+      <div class="eb-unit"><span class="eb-num" id="cd-days">14</span><span class="eb-label">Giorni</span></div>
+      <span class="eb-sep">:</span>
+      <div class="eb-unit"><span class="eb-num" id="cd-hours">00</span><span class="eb-label">Ore</span></div>
+      <span class="eb-sep">:</span>
+      <div class="eb-unit"><span class="eb-num" id="cd-mins">00</span><span class="eb-label">Min</span></div>
+    </div>
+    <a href="#iscrizione" class="eb-cta">Iscriviti ora →</a>
+  </div>
+</div>
+
+<!-- HOOK -->
+<section class="section hook-section" id="cosa">
+  <div class="section-inner">
+    <div class="hook-grid">
+      <div class="reveal">
+        <div class="label-tag">Il punto di partenza</div>
+        <p class="hook-question">"Ti capita mai di sentirti sopraffatt* dalle notizie sul clima, o di non sapere da dove iniziare per ridurre il tuo impatto quotidiano?"</p>
+        <div style="margin-top:28px;">
+          <p class="section-lead">La sostenibilità è un modo nuovo di vivere, scegliere e stare insieme. Per questo abbiamo creato <strong>Vivere Sostenibile</strong>: un percorso di 10 incontri in presenza per esplorare a 360° l'impatto delle nostre azioni individuali e collettive.</p>
+          <p class="section-lead" style="margin-top:16px;">Pratico e partecipativo per acquisire conoscenze e strumenti concreti, allenare il senso critico, fare rete ed essere cambiamento.</p>
+        </div>
+      </div>
+      <div class="hook-img reveal">
+        <img src="assets/vivere.jpg" alt="Vivere Sostenibile – Libra Pietrasanta">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="section" style="background:var(--cream);" id="percorso">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="label-tag">Cosa troverai</div>
+      <h2 class="section-title">Tre ragioni per <em>esserci</em></h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-icon">🔗</div>
+        <h3>Concretezza</h3>
+        <p>Imparare a collegare i puntini tra scelte personali e impatti collettivi. Ogni incontro parte dalla quotidianità per toccare tutto il toccabile.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">🌿</div>
+        <h3>Relazioni</h3>
+        <p>Lavorare in un gruppo locale con cui confrontarti, senza giudizi. Un contesto sicuro per imparare, sperimentare e costruire senso critico insieme.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">🔭</div>
+        <h3>Visione sistemica</h3>
+        <p>10 moduli interconnessi per coprire ogni aspetto della vita quotidiana e guardare la sostenibilità da ogni prospettiva.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section class="section program-section" id="programma">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="label-tag">Il programma</div>
+      <h2 class="section-title">10 incontri, <em>10 temi</em></h2>
+      <p class="section-lead">Dall'alimentazione alla finanza etica, dalla moda circolare all'ecologia digitale: ogni lunedì un tema diverso, tutti interconnessi.</p>
+    </div>
+    <div class="program-table">
+      <div class="program-item reveal"><span class="program-num">01</span><div class="program-detail"><div class="program-date">Lun 28 Settembre</div><div class="program-tema">Cittadinanza attiva</div></div></div>
+      <div class="program-item reveal"><span class="program-num">02</span><div class="program-detail"><div class="program-date">Lun 5 Ottobre</div><div class="program-tema">Crisi climatica, sostenibilità e biodiversità</div></div></div>
+      <div class="program-item reveal"><span class="program-num">03</span><div class="program-detail"><div class="program-date">Lun 12 Ottobre</div><div class="program-tema">Alimentazione</div></div></div>
+      <div class="program-item reveal"><span class="program-num">04</span><div class="program-detail"><div class="program-date">Lun 19 Ottobre</div><div class="program-tema">Cura della casa e della persona</div></div></div>
+      <div class="program-item reveal"><span class="program-num">05</span><div class="program-detail"><div class="program-date">Lun 26 Ottobre</div><div class="program-tema">Energia</div></div></div>
+      <div class="program-item reveal"><span class="program-num">06</span><div class="program-detail"><div class="program-date">Lun 9 Novembre</div><div class="program-tema">Modelli economici, produzioni e consumi</div></div></div>
+      <div class="program-item reveal"><span class="program-num">07</span><div class="program-detail"><div class="program-date">Lun 16 Novembre</div><div class="program-tema">Finanza etica</div></div></div>
+      <div class="program-item reveal"><span class="program-num">08</span><div class="program-detail"><div class="program-date">Lun 23 Novembre</div><div class="program-tema">Moda e vestiti</div></div></div>
+      <div class="program-item reveal"><span class="program-num">09</span><div class="program-detail"><div class="program-date">Lun 30 Novembre</div><div class="program-tema">Ecologia digitale</div></div></div>
+      <div class="program-item reveal"><span class="program-num">10</span><div class="program-detail"><div class="program-date">Lun 14 Dicembre</div><div class="program-tema">Mobilità e città sostenibili</div></div></div>
+    </div>
+    <div class="program-info">
+      <span class="program-badge">🕕 Ogni lunedì · 18.00 – 20.00</span>
+      <span class="program-badge">📍 Libra · Via S. Maria 33, Pietrasanta (LU)</span>
+    </div>
+  </div>
+</section>
+
+<!-- FACILITATORI -->
+<section class="section" id="chi-conduce">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="label-tag">Chi conduce</div>
+      <h2 class="section-title">Due guide, <em>una visione</em></h2>
+      <p class="section-lead">Insieme uniscono competenza tecnica, praticità e attenzione alla persona: perché parlare di sostenibilità significa anche parlare di come stiamo, come ci relazioniamo, come scegliamo.</p>
+    </div>
+    <div class="fac-grid">
+      <div class="fac-card reveal">
+        <div class="fac-header">
+          <div class="fac-name">Alice Pomiato</div>
+          <div class="fac-role">Formatrice in sostenibilità ambientale e sociale</div>
+        </div>
+        <div class="fac-body">
+          <p>Alice accompagna persone e organizzazioni a orientarsi nei temi della sostenibilità con un approccio sistemico e interdisciplinare, per trasformare la consapevolezza in scelte quotidiane reali.</p>
+          <a href="https://www.alicepomiato.it/" target="_blank" rel="noopener" class="fac-link">
+            alicepomiato.it
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="fac-card reveal">
+        <div class="fac-header">
+          <div class="fac-name">Lorenzo Galli</div>
+          <div class="fac-role">Educatore e arteteatroterapista</div>
+        </div>
+        <div class="fac-body">
+          <p>Lorenzo porta in questo percorso strumenti relazionali ed esperienziali, per far sì che ogni incontro non sia solo informazione, ma anche ascolto, confronto e trasformazione condivisa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY + WHO -->
+<section class="section why-section" id="perche">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="label-tag">Perché partecipare</div>
+      <h2 class="section-title">Fatto per <em>te</em>, se...</h2>
+    </div>
+    <div class="why-grid">
+      <div>
+        <p style="font-size:14px;color:var(--ink-s);margin-bottom:20px;font-style:italic;">Questo ciclo di incontri è per chi sente che la sostenibilità è importante, ma non ha mai trovato uno spazio sicuro e accessibile per imparare e sperimentare assieme.</p>
+        <ul class="who-list reveal">
+          <li>Hai mille domande e poche risposte: sul clima, su cosa vuol dire "sostenibilità", su cosa fare nel concreto ogni giorno</li>
+          <li>Senti che "non stai facendo abbastanza", ma non sai da dove iniziare</li>
+          <li>Vuoi capirci di più, senza sentirti giudicata o fuori posto</li>
+          <li>Credi che informarsi sia già un primo passo</li>
+          <li>Hai voglia di cambiare, ma non da sola</li>
+          <li>Cerchi un modo per vivere meglio, con più consapevolezza</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.3rem;font-weight:500;margin-bottom:20px;color:var(--ink);">Cosa porti a casa</h3>
+        <ul class="why-list reveal">
+          <li>Un percorso teorico e pratico: si parte da noi, dalla quotidianità, per toccare tutto il toccabile</li>
+          <li>Un gruppo locale con cui costruire senso critico, non solo ricevere nozioni</li>
+          <li>10 temi diversi ma legati, per guardare la sostenibilità da ogni prospettiva</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING + FORM -->
+<section class="section" id="iscrizione" style="background:var(--sage);padding-top:80px;padding-bottom:80px;">
+  <div class="section-inner" style="margin-bottom:40px;">
+    <div class="reveal" style="text-align:center;">
+      <div class="label-tag" style="justify-content:center;">Iscriviti</div>
+      <h2 class="section-title" style="color:var(--ink);">Prenota il tuo <em>posto</em></h2>
+    </div>
+  </div>
+  <div class="pricing-inner">
+
+    <!-- PRICE CARD -->
+    <div class="price-card reveal">
+      <div class="price-card-label">Quota di partecipazione</div>
+      <h2 class="price-card" style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:500;color:var(--ink);margin-bottom:24px;border:0;padding:0;box-shadow:none;border-radius:0;">10 incontri · da settembre a dicembre</h2>
+      <div class="price-main">
+        <div class="price-option featured">
+          <div class="price-badge">🎟️ Early bird · entro il 15 settembre</div>
+          <div class="price-amount">€ 250</div>
+          <div class="price-desc">Quota scontata · iscrizione anticipata</div>
+        </div>
+        <div class="price-option regular">
+          <div class="price-badge">Quota intera</div>
+          <div class="price-amount">€ 290</div>
+          <div class="price-desc">Dal 16 settembre in poi</div>
+        </div>
+      </div>
+      <div class="price-deadline">
+        ⏰ <span>L'offerta lancio scade il <strong>15 settembre</strong> — risparmia €40 iscrivendoti prima</span>
+      </div>
+      <ul class="price-includes">
+        <li>10 incontri in presenza da 2 ore ciascuno</li>
+        <li>Materiali e approfondimenti per ogni tema</li>
+        <li>Gruppo ristretto in presenza a Pietrasanta</li>
+        <li>Accesso alla community del percorso</li>
+        <li>Spazio di Libra Terra Creativa</li>
+      </ul>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card reveal">
+      <h3>Manda la tua richiesta</h3>
+      <p class="sub">Compila il modulo, ti risponderemo entro 24h con le istruzioni di pagamento per confermare il tuo posto.</p>
+      <form id="vsForm" novalidate>
+        <input type="hidden" name="evento" value="Vivere Sostenibile – percorso 10 incontri · settembre–dicembre 2026">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="vs-nome">Nome e Cognome *</label>
+            <input type="text" id="vs-nome" name="nome" required placeholder="Il tuo nome completo">
+          </div>
+          <div class="form-group">
+            <label for="vs-quota">Quota preferita</label>
+            <select id="vs-quota" name="quota">
+              <option value="Early bird €250 (entro 15/9)">Early bird €250</option>
+              <option value="Quota intera €290">Quota intera €290</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="vs-email">Email *</label>
+          <input type="email" id="vs-email" name="email" required placeholder="la.tua@email.it">
+        </div>
+        <div class="form-group">
+          <label for="vs-tel">Telefono (opzionale)</label>
+          <input type="tel" id="vs-tel" name="telefono" placeholder="+39 000 000 0000">
+        </div>
+        <div class="form-group">
+          <label for="vs-note">Perché vuoi partecipare? (opzionale)</label>
+          <textarea id="vs-note" name="note" placeholder="Raccontaci qualcosa su di te e cosa ti ha spinto a iscriverti..."></textarea>
+        </div>
+        <button type="submit" class="form-submit" id="vs-submit">
+          Invia richiesta di iscrizione →
+        </button>
+        <p class="form-disclaimer">Riceverai una risposta entro 24h con il link di pagamento per confermare il tuo posto. Per info: <a href="mailto:alice@aliceful.it" style="color:var(--mauve);">alice@aliceful.it</a></p>
+      </form>
+      <div id="vs-success" class="form-success">
+        <div class="check">✓</div>
+        <h3>Richiesta inviata!</h3>
+        <p>Ti risponderemo entro 24h con il link per completare l'iscrizione e confermare il tuo posto.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">Libra <em>Terra Creativa</em></div>
+    <p>Via Santa Maria 33 · 55045 Pietrasanta (LU) · librapietrasanta@gmail.com · +39 349 140 8666</p>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/librapietrasanta" target="_blank" rel="noopener">@librapietrasanta</a>
+      <a href="https://wa.me/393491408666" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/+ZI55kD1rIlM0MTBk" target="_blank" rel="noopener">Canale Telegram</a>
+    </div>
+    <a href="index.html" class="footer-back">← Torna a tutti gli eventi di settembre</a>
+  </div>
+</footer>
+
+<script>
+/* NAV */
+window.addEventListener('scroll',function(){document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>60);});
+
+/* COUNTDOWN to Sept 15 2026 */
+function updateCountdown(){
+  var target = new Date('2026-09-15T23:59:59');
+  var now = new Date();
+  var diff = target - now;
+  if(diff <= 0){
+    document.getElementById('eb-banner').style.display = 'none';
+    return;
+  }
+  var days = Math.floor(diff/86400000);
+  var hours = Math.floor((diff%86400000)/3600000);
+  var mins = Math.floor((diff%3600000)/60000);
+  document.getElementById('cd-days').textContent = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(mins).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 60000);
+
+/* FORM */
+document.getElementById('vsForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  var btn = document.getElementById('vs-submit');
+  btn.disabled = true;
+  btn.textContent = 'Invio in corso…';
+  try {
+    var nome  = document.getElementById('vs-nome').value.trim()  || '—';
+    var email = document.getElementById('vs-email').value.trim() || '—';
+    var tel   = document.getElementById('vs-tel').value.trim()   || '—';
+    var quota = document.getElementById('vs-quota').value        || '—';
+    var note  = document.getElementById('vs-note').value.trim()  || '—';
+    var payload = {
+      access_key: W3F_KEY,
+      subject: 'Iscrizione Vivere Sostenibile – ' + quota,
+      name: nome, email: email,
+      message: [
+        'PERCORSO: Vivere Sostenibile (10 incontri, sett–dic 2026)',
+        'NOME: ' + nome,
+        'EMAIL: ' + email,
+        'TELEFONO: ' + tel,
+        'QUOTA RICHIESTA: ' + quota,
+        'MOTIVAZIONE: ' + note,
+        '',
+        'Rispondi con il link di pagamento per confermare il posto.'
+      ].join('\n')
+    };
+    var controller = new AbortController();
+    var timeout = setTimeout(function(){controller.abort();}, 10000);
+    var resp = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST', signal: controller.signal,
+      headers: {'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    clearTimeout(timeout);
+    var result = await resp.json();
+    if(result.success){
+      document.getElementById('vsForm').style.display = 'none';
+      document.getElementById('vs-success').style.display = 'flex';
+    } else { throw new Error(result.message || 'Errore'); }
+  } catch(err){
+    btn.disabled = false;
+    btn.textContent = 'Invia richiesta di iscrizione →';
+    if(err.name==='AbortError'){alert('Richiesta scaduta. Scrivi direttamente a alice@aliceful.it');}
+    else{alert('Errore: '+(err.message||'sconosciuto')+'\nScrivi a alice@aliceful.it');}
+  }
+});
+
+/* REVEAL */
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.10});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
